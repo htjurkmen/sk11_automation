@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-
+        isPalindrome();
 
     }
 
@@ -77,6 +77,22 @@ public class Exercises {
         return num % 2 == 0;
     }
 
+    public static void isEvenDetails() {
+        Scanner checkNum = new Scanner(System.in);
+        System.out.println("Enter Number");
+        int i = checkNum.nextInt();
+        if (i >= 0) {
+            isEven(i);
+        } else {
+            System.out.println("Enter Positive Integer!");
+        }
+        if (isEven(i) == true) {
+            System.out.println("true");
+        } else if (isEven(i) == false) {
+            System.out.println("false");
+        }
+    }
+
     public static boolean isPalindrome() {
         int remainder;
         int sum = 0;
@@ -94,7 +110,7 @@ public class Exercises {
                 remainder = palindrome % 10;
                 // we do multiplication by 10 to increase digit size and add the new number at the end
                 sum = (sum * 10) + remainder;
-                // we can do it short remainder = (remainder * 10) + (palindrome % 10);
+                // we can also write it on singe line remainder = (remainder * 10) + (palindrome % 10);
                 // we divide by 10 and get only the whole digits ie we remove numbers at the end
                 palindrome = palindrome / 10;
             }
