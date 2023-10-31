@@ -3,7 +3,7 @@ package lecture06;
 public class Examples {
 
     public static void main(String[] args) {
-
+        myMethod();
     }
 
 
