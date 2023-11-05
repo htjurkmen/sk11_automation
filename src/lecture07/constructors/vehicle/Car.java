@@ -1,4 +1,4 @@
-package lecture07;
+package lecture07.constructors.vehicle;
 
 public class Car extends Vehicle {
     private String brand = null;

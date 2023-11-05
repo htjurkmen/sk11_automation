@@ -1,4 +1,4 @@
-package lecture07;
+package lecture07.constructors.vehicle;
 
 public class Vehicle {
     private String regNo = null;

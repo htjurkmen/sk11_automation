@@ -1,4 +1,4 @@
-package lecture07;
+package lecture07.constructors;
 
 public class Employee {
     private String firstName = null;

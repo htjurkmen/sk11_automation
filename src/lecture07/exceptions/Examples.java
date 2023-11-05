@@ -1,28 +1,22 @@
-package lecture07;
+package lecture07.exceptions;
 
-import java.rmi.RemoteException;
-import java.util.*;
 import java.io.*;
+
 public class Examples {
-
-
     public static void main(String[] args) {
-
-        //Here we handle exception that is not handled insite the method testThrowsException()
-         /*try {
-            testThrowsException("src/testFile1.txt");
-        }catch (FileNotFoundException e){
-            System.out.println("The file path is wrong or file is missing !");
-        }*/
-
-
-
     }
 
-    /*    static void testCheckedException() {
+/*    static void testCheckedException() {
         File file = new File("src/lecture07/exceptions/testFile.txt");
         FileReader fr = new FileReader(file);
     }*/
+
+    //Here we handle exception that is not handled inside the method testThrowsException()
+         /*try {
+            testThrowsException("src/lecture07/exceptions/testFile1.txt");
+        }catch (FileNotFoundException e){
+            System.out.println("The file path is wrong or file is missing !");
+        }*/
 
     static void testUncheckedException() {
         int[] num = {1, 2, 3, 4};
@@ -31,8 +25,8 @@ public class Examples {
 
     /**
      * @param path example:
-     *             "src/lecture07/testFile.txt" valid path
-     *             "src/lecture07/testFile1.txt" invalid path
+     *             "src/lecture07/exceptions/testFile.txt"
+     *             "src/lecture07/testFile1.txt"
      */
     static void testTryCatch(String path) {
         File file = new File(path);
