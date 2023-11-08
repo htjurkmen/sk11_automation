@@ -1,4 +1,4 @@
-package lecture06;
+package lecture06.examples;
 
 public class MathOperations {
     static double addition(double[] numbers) {

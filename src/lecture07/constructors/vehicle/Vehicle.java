@@ -1,8 +1,9 @@
 package lecture07.constructors.vehicle;
 
 public class Vehicle {
-    private String regNo = null;
-    public Vehicle(String no) {
-        this.regNo = no;
+    private String regNo;
+
+    public Vehicle(String regNo) {
+        this.regNo = regNo;
     }
 }

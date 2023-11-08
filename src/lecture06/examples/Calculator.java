@@ -1,4 +1,4 @@
-package lecture06;
+package lecture06.examples;
 
 public class Calculator {
     public static void main(String[] args) {

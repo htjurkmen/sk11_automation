@@ -9,8 +9,14 @@ public class Exercises {
         double num1 = scanner.nextDouble();
         System.out.println("Please provide the second number: ");
         double num2 = scanner.nextDouble();
+        if (num2 == 0) {
+            throw new ArithmeticException("Division by zero is not allowed.");
+        }
         System.out.println("Result after division:" + divideNumbers(num1, num2));
     }
+
+
+
 
     /**
      * Try the following combinations

@@ -85,8 +85,8 @@ public class Examples {
             if (number % factor == 0)
                 System.out.println(factor + " is a factor of " + number);
         } catch (ArithmeticException | NumberFormatException ex) {
-            throw new IllegalArgumentException("Incorrect input! Please enter only numbers bigger than 0!");
-        }
+        throw new IllegalArgumentException("Incorrect input! Please enter only numbers bigger than 0!");
+    }
     }
 
     /**
