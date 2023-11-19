@@ -1,0 +1,434 @@
+
+LOGIN Page:
+Xml paths:
+//*[@id="homeIcon"] - home icon
+//*[@id="nav-link-home"] - home button
+//*[@id="nav-link-login"] - login button
+//*[@id="search-bar"] - search bar
+//*[@id="defaultLoginFormUsername"] - username
+//*[@id="defaultLoginFormPassword"] - password
+//*[@formcontrolname="rememberMe"] - "Remember me" button
+//*[@id="sign-in-button"] - "Sing in" button
+//*[@href="/users/register"] - "Register" button
+
+REGISTER page:
+Xml paths:
+//*[@id="homeIcon"] - home icon
+//*[@id="nav-link-home"] - home button
+//*[@id="nav-link-login"] - login button
+//*[@id="search-bar"] - search bar
+//*[@formcontrolname="username"] - username
+//*[@formcontrolname="email"] - email
+//*[@id="defaultRegisterFormPassword"] - password
+//*[@id="defaultRegisterPhonePassword"] - comfirm password
+//*[@id="sign-in-button"] - "Sing in" button
+
+HOME page:
+Xml paths:
+//*[@id="homeIcon"] - home icon
+//*[@id="nav-link-home"] - home button
+//*[@id="nav-link-profile"] - profile button
+//*[@id="nav-link-new-post"] - new post button
+//*[@id="search-bar"] - search bar
+//*[@id="navbarColor01"]/ul[2]/li/a/i - sign out button
+//*[contains(text(), "Follow")]- follow button
+//*[@class="far fa-heart fa-2x"] - like button
+//*[@class="ml-4 far fa-thumbs-down fa-2x"] - dislike button
+
+PROFILE page:
+Xml paths:
+//*[@id="homeIcon"] - home icon
+//*[@id="nav-link-home"] - home button
+//*[@id="nav-link-profile"] - profile button
+//*[@id="nav-link-new-post"] - new post button
+//*[@id="search-bar"] - search bar
+//*[@id="navbarColor01"]/ul[2]/li/a/i - sign out button
+//*[@class="edit-profile-pic ng-star-inserted"] - edit profile picture
+//*[@class="fas fa-user-edit ng-star-inserted"] - edit username
+//*[@id="followers"] - followers
+//*[@id="following"] - following
+//*[@class="btn-all btn btn-primary active"] - "All" button
+//*[@class="btn-public btn btn-primary"] - "Public" button
+//*[@class="btn-private btn btn-primary"] - "Private" button
+//*[@class="far fa-plus-square fa-3x"] - new post icon
+
+NEW POSTS page:
+Xml paths:
+//*[@id="homeIcon"] - home icon
+//*[@id="nav-link-home"] - home button
+//*[@id="nav-link-profile"] - profile button
+//*[@id="nav-link-new-post"] - new post button
+//*[@id="search-bar"] - search bar
+//*[@id="navbarColor01"]/ul[2]/li/a/i - sign out button
+//*[@class="uploadfilecontainer"] - upload file container
+//*[@id="choose-file"] - "Browse" button
+//*[@formcontrolname="caption"] - post caption
+//*[@class="post-status-label custom-control-label active"] - public to private switch button
+//*[@id="create-post"] - submit button
+
+XPATH selectors:
+............................................................
+HOME page
+
+Navbar toggler button (for S, M viewports - Mobile resolutions)
+//button[@class="navbar-toggler"]
+//nav[@class="navbar navbar-expand-md navbar-light bg-light"]/descendant::button[@class="navbar-toggler"]
+
+Logo (home) button:
+//img[@alt="homeIcon"]
+//img[@id="homeIcon"]
+//*[@id="homeIcon"]
+
+Home button in navbar
+//a[@id="nav-link-home"]
+//a[@href="/posts/all"]
+//ul[@class="navbar-nav"]/li[position()=1]
+
+Login button in navbar
+//a[@id="nav-link-login"]
+//ul[@class="navbar-nav"]/li[position()=2]
+//ul[@class="navbar-nav"]/li[last()]
+
+First post (top post)
+//app-all-posts/div/div/div[1]
+//app-all-posts/div/div/div[position()=1]
+//div[@class="row post-list-container"]/div[position()=1]
+
+Image in First post
+//div[@class="row post-list-container"]/div[position()=1]/app-post-detail/div/div
+//div[@class="row post-list-container"]/div[position()=1]//div[@class="post-feed-img"]
+
+Link to User profile in First post
+//div[@class="row post-list-container"]/div[position()=1]/descendant::a
+//div[@class="row post-list-container"]/div[position()=1]/descendant::a[@class="post-user"]
+
+N-th post (e.g. 3)
+//app-all-posts/div/div/div[position()=3]
+//div[@class="row post-list-container"]/div[position()=3]
+
+! Last element does NOT work, we have lazy load
+//app-all-posts/div/div/div[last()]
+
+ALL elements with User name in posts
+//a[@class="post-user"]
+
+Open modal - Like (Heart) button
+//div[@class="modal-dialog"]//i[@class="like far fa-heart fa-2x"]
+//div[@class="modal-dialog"]//div[@class="icons-container"]/i[@class="like far fa-heart fa-2x"]
+
+Open modal - Dislike button
+//div[@class="modal-content"]//i[@class="ml-4 far fa-thumbs-down fa-2x"]
+//div[@class="modal-content"]//div[@class="icons-container"]//i[@class="ml-4 far fa-thumbs-down fa-2x"]
+//div[@class="modal-dialog"]//div[@class="icons-container"]//i[@class="ml-4 far fa-thumbs-down fa-2x"]
+
+............................................................
+LOGIN page
+
+Input field: "Username or email"
+//input[@id="defaultLoginFormUsername"]
+//input[@formcontrolname="usernameOrEmail"]
+//input[@name="usernameOrEmail"]
+//form/input[1]   (yes, I know, bad idea)
+
+Input field: "Password"
+//input[@id="defaultLoginFormPassword"]
+//input[@formcontrolname="password"]
+//input[@name="password"]
+//form/input[2]   (yes, I know, bad idea, just practising)
+
+"Remember me" checkbox
+//input[@formcontrolname="rememberMe"]
+//input[@type="checkbox"]  (also bad idea if more checkboxes added, but now it's unique on page)
+//div[@class="remember-me"]/input
+//span[text()="Remember me"]/preceding-sibling::input
+//div[@class="remember-me"]/child::input
+
+"Sign In" button
+//button[@id="sign-in-button"]
+//button[@type="submit"]
+
+"Register" link
+//a[text()="Register"]
+//a[@href="/users/register"]
+//span[text()="Not a member? "]/following-sibling::a
+//span[text()="Not a member? "]/following-sibling::a[text()="Register"]
+//span[text()="Not a member? "]/following-sibling::a[@href="/users/register"]
+//form//a[text()="Register"]
+//form//a[@href="/users/register"]
+
+............................................................
+REGISTER / Sign Up page
+
+"Username" input field
+//input[@formcontrolname="username"]
+//input[@name="username"]
+//input[@placeholder="Username"]
+//input[@type="text"] (if more type=text inputs added, this will be a bad idea)
+
+    (Untouched "Username" input field) NOTE: will NOT add similar Xpath for below fields, exercise purpose only
+//input[@class="form-control ng-untouched ng-pristine ng-invalid" and @formcontrolname="username"]
+//input[@class="form-control ng-untouched ng-pristine ng-invalid" and @name="username"]
+//input[@class="form-control ng-untouched ng-pristine ng-invalid" and @placeholder="Username"]
+//input[@class="form-control ng-untouched ng-pristine ng-invalid" and @type="text"]
+    ("Username" input field after mouse Focus Out event)
+//input[@class="form-control ng-pristine ng-invalid is-invalid ng-touched" and @formcontrolname="username"]
+//input[@class="form-control ng-pristine ng-invalid is-invalid ng-touched" and @name="username"]
+//input[@class="form-control ng-pristine ng-invalid is-invalid ng-touched" and @placeholder="Username"]
+//input[@class="form-control ng-pristine ng-invalid is-invalid ng-touched" and @type="text"]
+
+"Email" input field
+//input[@formcontrolname="email"]
+//input[@name="username"]
+//input[@placeholder="Username"]
+//input[@type="email"]
+
+"Password" input field
+//input[@formcontrolname="password"]
+//input[@id="defaultRegisterFormPassword"]
+//input[@name="password"]
+//input[@placeholder="Password"]
+//input[@type="password" and @formcontrolname="password"]
+//input[@type="password" and @id="defaultRegisterFormPassword"]
+//input[@type="password" and @name="password"]
+//input[@type="password" and @placeholder="Password"]
+
+"Confirm Password" input field
+//input[@formcontrolname="confirmPassword"]
+//input[@id="defaultRegisterPhonePassword"]
+//input[@name="verify-password"]
+//input[@placeholder="Confirm Password"]
+//input[@placeholder="Confirm Password" and @type="password"]
+...etc. variations as above
+
+"Sign In" button
+//button[@class="btn btn-primary mt-4"]
+//button[@id="sign-in-button"]
+//button[@type="submit"]
+//button[text()="Sign in"]
+
+================\\=====================================//==============
+================//=====================================\\==============
+
+CSS selectors:
+
+............................................................
+HOME page
+
+Navbar toggler button (for S, M viewports - Mobile resolutions)
+button.navbar-toggler
+.navbar-toggler
+.navbar-toggler[type=button]
+button.navbar-toggler[type=button]
+
+Logo (home) button:
+#homeIcon
+img#homeIcon
+img[alt=homeIcon]
+img[alt="homeIcon"]
+img#homeIcon[alt=homeIcon]
+
+Home button in navbar
+#nav-link-home
+a#nav-link-home
+a.nav-link#nav-link-home
+a.nav-link#nav-link-home[href="/posts/all"]
+
+Login button in navbar
+#nav-link-login
+a#nav-link-login
+a.nav-link#nav-link-login
+a.nav-link#nav-link-login[href="/users/login"]
+
+First post (top post) - first selected, not unique
+.row.post-list-container app-post-detail
+
+Image in First post
+
+
+Link to User profile in First post
+
+
+N-th post (e.g. 3)
+
+
+! Last element does NOT work, we have lazy load
+
+
+ALL elements with User name in posts
+
+............................................................
+LOGIN page
+
+Input field: "Username or email"
+#defaultLoginFormUsername
+[placeholder="Username or email"]
+.form-control.mb-4.ng-untouched.ng-pristine.ng-invalid[placeholder="Username or email"]
+form input[placeholder="Username or email"]
+form > input[placeholder="Username or email"]
+[formcontrolname="usernameOrEmail"]
+input[formcontrolname="usernameOrEmail"]
+form input[formcontrolname="usernameOrEmail"]
+
+Input field: "Password"
+#defaultLoginFormPassword
+[formcontrolname="password"]
+[name="password"]
+[placeholder="Password"]
+[type="password"]
+input[placeholder="Password"]
+form input[placeholder="Password"]
+form > input[placeholder="Password"]
+
+"Remember me" checkbox
+[type="checkbox"]
+[formcontrolname="rememberMe"]
+.remember-me-button
+input[type="checkbox"]
+form input[type="checkbox"]
+:enabled[type="checkbox"]
+
+"Sign In" button
+#sign-in-button
+[type="submit"]
+.my-4
+my-4 btn btn-primary
+.my-4.btn.btn-primary
+[class="my-4 btn btn-primary"]
+btn
+
+"Register" link
+[href="/users/register"]
+p a
+form a
+form p a
+[href*=reg]
+
+............................................................
+REGISTER / Sign Up page
+
+"Username" input field
+[formcontrolname="username"]
+[name="username"]
+[formcontrolname="username"][name="username"]
+[type="text"]
+[type="text"][formcontrolname="username"]
+[placeholder="Username"]
+.form-control[name*=user]
+
+"Email" input field
+[type="email"]
+[formcontrolname="email"]
+[placeholder="email"]
+input[type="email"]
+input[type*=mail]
+
+"Password" input field
+#defaultRegisterFormPassword
+[formcontrolname="password"]
+[name="password"]
+.form-control[name="password"]
+[type="password"][formcontrolname*=passw]
+
+"Confirm Password" input field
+#defaultRegisterPhonePassword
+[name*=verif]
+[formcontrolname="confirmPassword"]
+[formcontrolname*="conf"]
+[formcontrolname*="irmPas"]
+[formcontrolname^="conf"]
+[formcontrolname^=conf]
+
+"Sign In" button
+#sign-in-button
+[class="btn btn-primary mt-4"]
+button.btn
+btn btn-primary mt-4
+.btn.btn-primary.mt-4
+
+Login page
+http://training.skillo-bg.com:4200/users/login
+
+#defaultLoginFormUsername -> "Username or email" input field
+
+#defaultLoginFormPassword -> "Password" input field
+
+[formcontrolname=rememberMe] -> Remember me checkbox
+
+#sign-in-button -> Sign in button
+
+a[href*=register] -> Link to Register form
+
+----------
+Register page
+http://training.skillo-bg.com:4200/users/register
+
+[formcontrolname="username"] -> "Username" input field
+
+[formcontrolname="email"] -> "Email" input field
+
+[formcontrolname="password"] -> "Password" input field
+
+[formcontrolname="confirmPassword"] -> "Confirm password" input field
+
+#"sign-in-button" -> Sign in button
+
+-----------
+Home page
+
+http://training.skillo-bg.com:4200/posts/all
+
+
+.navbar-toggler -> Navigation bar
+
+#nav-link-home -> Home menu
+
+#nav-link-login -> Login menu
+
+Login page
+http://training.skillo-bg.com:4200/users/login
+
+//p[contains(text(), "Sign in")] -> Sign in form title "Sign in"
+
+//*[@id="defaultLoginFormUsername"] -> "Username or email" input field
+
+//*[@id="defaultLoginFormPassword"] -> "Password" input field
+
+//*[@[formcontrolname="rememberMe"]] -> Remember me checkbox
+
+//span[contains(text(), "Remember me")] - > label of checkbox "Remember me"
+
+//*[@id="sign-in-button"] -> Sign in button
+
+//span[contains(text(), "Not a member")] -> "Not a member" text
+
+//a[contains(text(), "Register")] -> Link to Register form
+
+----------
+Register page
+http://training.skillo-bg.com:4200/users/register
+
+//h4[contains(text(), "Sign up")] -> Register form title "Sign up"
+
+//input[@formcontrolname="username"] -> "Username" input field
+
+//input[@formcontrolname="email"] -> "Email" input field
+
+//input[@formcontrolname="password"] -> "Password" input field
+
+//input[@formcontrolname="confirmPassword"] -> "Confirm password" input field
+
+//*[@id="sign-in-button"] -> Sign in button
+
+//div[contains(text(), "Registration failed")] -> Warning which appears on registration failure
+
+-----------
+Home page
+
+http://training.skillo-bg.com:4200/posts/all
+
+//button[@class="navbar-toggler"] -> Navigation bar
+
+//a[@id="nav-link-home"] -> Home menu
+
+//a[@id="nav-link-login"] -> Login menu
+
